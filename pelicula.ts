@@ -26,7 +26,7 @@ public setGenero(generos:Genero[]):void {
 public setDuracion(duracion:number):void {
     this.duracion = duracion;
 }
-public setAño(anio:number):void {
+public setAnio(anio:number):void {
     this.anio = anio;
 }
 public setCalificacion(calificacion:number):void {
@@ -44,26 +44,58 @@ public getGenero():Genero[]{
 public getDuracion():number{
     return this.duracion
 }
-public getAño():number{
+public getAnio():number{
     return this.anio
 }
 public getCalificacion():number{
     return this.calificacion
 }
-/*ingresarGeneros(id:number, nombre:string):void{
-        
-    const nuevoGenero = new Genero(id, nombre);
-    this.generos.push(nuevoGenero);
-}*/
-ingresarGeneros():void{
-       
-}
+
 contargeneros():number{
     return this.generos.length
 }
 public imprimir():void{
-    let impresion = {
-
+console.log("Nombre:", this.nombre);
+console.log("Director:", this.director);
+console.log("Géneros:", this.getGenero().map(genero => genero.getNombre()).join(", "));
+console.log("Duración:", this.duracion, " Minutos");
+console.log("Año:", this.anio);
+console.log("Calificación:", this.calificacion, " puntos");
+}
+private esPeliculaEpica():boolean{
+if (this.duracion >= 180) {
+    return true
+} else {
+    return false
+}
+}
+private calcularValoración():string{
+    if (this.calificacion >= 0 && this.calificacion < 2) {
+        return "Muy mala"
+    } else if (this.calificacion > 2 && this.calificacion < 5) {
+        return "Mala"
+    }else if (this.calificacion > 5 && this.calificacion < 7) {
+        return "Regular"
+    }else if (this.calificacion > 7 && this.calificacion < 8) {
+        return "Buena"
+    }else if (this.calificacion > 8 && this.calificacion < 10) {
+        return "Mala"
+    }else {
+        return "Calificacion no es valida"
+    }
+}
+private esSimilar(pelicula:string):boolean{
+    if (this.nombre == pelicula) {
+        return true
+    } else {
+        return false
+    }
+}
+public alquilarPelicula(nombrePelicula:string):string{
+    if (this.nombre === nombrePelicula){
+        return `Película ${nombrePelicula} alquilada con éxito.`;
+    }else{
+        return `Película ${nombrePelicula} No esta disponible.`;
     }
 }
 
