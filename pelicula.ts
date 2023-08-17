@@ -62,29 +62,29 @@ console.log("Duración:", this.duracion, " Minutos");
 console.log("Año:", this.anio);
 console.log("Calificación:", this.calificacion, " puntos");
 }
-private esPeliculaEpica():boolean{
+public esPeliculaEpica():boolean{
 if (this.duracion >= 180) {
     return true
 } else {
     return false
 }
 }
-private calcularValoración():string{
+public calcularValoración():string{
     if (this.calificacion >= 0 && this.calificacion < 2) {
         return "Muy mala"
     } else if (this.calificacion > 2 && this.calificacion < 5) {
         return "Mala"
-    }else if (this.calificacion > 5 && this.calificacion < 7) {
+    }else if (this.calificacion >= 5 && this.calificacion < 7) {
         return "Regular"
-    }else if (this.calificacion > 7 && this.calificacion < 8) {
+    }else if (this.calificacion >= 7 && this.calificacion < 8) {
         return "Buena"
-    }else if (this.calificacion > 8 && this.calificacion < 10) {
+    }else if (this.calificacion >= 8 && this.calificacion < 10) {
         return "Mala"
     }else {
         return "Calificacion no es valida"
     }
 }
-private esSimilar(pelicula:string):boolean{
+public esSimilar(pelicula:string):boolean{
     if (this.nombre == pelicula) {
         return true
     } else {
@@ -101,3 +101,4 @@ public alquilarPelicula(nombrePelicula:string):string{
 
 }
 
+//let pelicula5 = new Pelicula("Soy Leyenda","James Cameron",[],192,2006,10)

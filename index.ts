@@ -57,6 +57,12 @@ let pelicula2 = new Pelicula("Terminator","James Cameron",generoTerminator,108,1
 let pelicula3 = new Pelicula("The Avengers","Joss Whedon",generoAvengers,181,2011,8);
 let pelicula4 = new Pelicula("Jhon Wick","Chad Stahelski",generoJhonWick,101,2014,10);
 
+pelicula1.imprimir()
+console.log("--------------------------------------------------------------");
+
+console.log(pelicula2.esSimilar("Terminator"))
+console.log(pelicula3.calcularValoración())
+console.log(pelicula4.esPeliculaEpica())
 
 agregarPeliculas(pelicula1)
 agregarPeliculas(pelicula2)
